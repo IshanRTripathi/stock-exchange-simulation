@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StockExchangeSimulationApplication {
 
     public static void main(String[] args) {
+
+        System.out.println("Yyaay");
         SpringApplication.run(StockExchangeSimulationApplication.class, args);
     }
 
