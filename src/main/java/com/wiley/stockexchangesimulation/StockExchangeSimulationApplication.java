@@ -9,6 +9,7 @@ public class StockExchangeSimulationApplication {
     public static void main(String[] args) {
 
         System.out.println("Yyaay");
+        System.out.println("from karan branch");
         SpringApplication.run(StockExchangeSimulationApplication.class, args);
     }
 
