@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.ParsePosition;
 
+import javax.persistence.Entity;
+@Entity
 public class Order {
     private String timeStamp;
     private BigInteger id;

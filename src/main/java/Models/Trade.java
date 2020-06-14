@@ -5,6 +5,8 @@ import SupportingFiles.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import javax.persistence.Entity;
+@Entity
 public class Trade {
     private String timeStamp;
     private BigInteger id;
