@@ -1,5 +1,8 @@
 package Models;
 
+import SupportingFiles.Environment;
+import SupportingFiles.Side;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.ParsePosition;

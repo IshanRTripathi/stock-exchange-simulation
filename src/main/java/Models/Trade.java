@@ -14,7 +14,7 @@ public class Trade {
     private BigDecimal quantity;
     private BigDecimal price;
 
-    Trade(Order orderSell, Order orderBuy, BigDecimal quantity, BigDecimal price) {
+    public Trade(Order orderSell, Order orderBuy, BigDecimal quantity, BigDecimal price) {
 
 //        //Validation removed in order to simplify the assignment
 //        if (orderBuy.getClient().equals(orderSell.getClient()))

@@ -46,7 +46,7 @@ public class OrderBook {
         orderBook.get(order.getStock()).get(order.getPrice()).add(order);
     }
 
-    Order match(final Order order) {
+    public Order match(final Order order) {
         if (order.getSide() != this.side.getOppositeSide())
             throw new IllegalArgumentException("Trying to match an illegal order side.");
 

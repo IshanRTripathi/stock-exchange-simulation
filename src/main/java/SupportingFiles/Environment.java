@@ -11,7 +11,7 @@ public class Environment {
     private static Calendar cal = Calendar.getInstance();
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static Locale locale = new Locale("en", "US");
-    static DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
+    public static DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
     private static BigInteger nextOrderID = BigInteger.ZERO;
 
     static {
