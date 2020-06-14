@@ -1,4 +1,6 @@
-package com.nasdaq.internship;
+package Models;
+
+import SupportingFiles.*;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -18,9 +20,9 @@ public class Trade {
 //        if (orderBuy.getClient().equals(orderSell.getClient()))
 //            throw new IllegalArgumentException("BUY and SELL client is the same");
 
-        if (orderBuy.getSide() != Side.BUY || orderSell.getSide() != Side.SELL) {
+        /*if (orderBuy.getSide() != Side.BUY || orderSell.getSide() != Side.SELL) {
             throw new IllegalArgumentException("Wrong side");
-        }
+        }*/
         if (!orderBuy.getStock().equals(orderSell.getStock())) {
             throw new IllegalArgumentException("Stock names do not match");
         }
@@ -62,7 +64,7 @@ public class Trade {
                 price;
     }
 
-    BigDecimal getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 }

@@ -1,4 +1,4 @@
-package com.nasdaq.internship;
+package Models;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -13,7 +13,7 @@ public class Order {
     private BigDecimal quantity;
     private BigDecimal price;
 
-    Order(String line) {
+    public Order(String line) {
         String[] parts = line.split("[ @]");
         if ((parts.length != 5) && (parts.length != 8)) {
             throw new IllegalArgumentException("Incorrect number of parameters " + parts.length);
@@ -50,7 +50,7 @@ public class Order {
                 Environment.decimalFormat.format(price);
     }
 
-    void decrease(BigDecimal decrement) {
+    public void decrease(BigDecimal decrement) {
         if (decrement.signum() <= 0) {
             throw new IllegalArgumentException("Decrement <= 0");
         }
@@ -68,7 +68,7 @@ public class Order {
         return client;
     }
 
-    Side getSide() {
+    public Side getSide() {
         return side;
     }
 
@@ -76,11 +76,11 @@ public class Order {
         return stock;
     }
 
-    BigDecimal getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    BigDecimal getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 

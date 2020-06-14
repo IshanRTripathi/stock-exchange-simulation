@@ -1,9 +1,14 @@
-package com.nasdaq.internship;
+package Engine;
+
+import Models.Order;
+import Models.OrderBook;
+import Models.Trade;
+import SupportingFiles.Side;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class MyEngine implements MatchingEngine {
+public class MyEngine implements MatchingEngine {
 
     private final OrderBook buyOrderBook = OrderBook.buildBuyOrderBook();
 

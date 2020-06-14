@@ -1,8 +1,8 @@
-package com.nasdaq.internship;
+package SupportingFiles;
 
 public enum Side {
     BUY, SELL;
-    private Side opposite;
+    public Side opposite;
 
     static {
         BUY.opposite = SELL;
