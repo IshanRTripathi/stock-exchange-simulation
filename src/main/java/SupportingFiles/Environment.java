@@ -1,4 +1,4 @@
-package com.nasdaq.internship;
+package SupportingFiles;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-class Environment {
+public class Environment {
     private static Calendar cal = Calendar.getInstance();
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static Locale locale = new Locale("en", "US");
@@ -18,11 +18,11 @@ class Environment {
         decimalFormat.setParseBigDecimal(true);
     }
 
-    static String getCurrentTimeStamp() {
+    public static String getCurrentTimeStamp() {
         return sdf.format(cal.getTime());
     }
 
-    static BigInteger getNextOrderId() {
+    public static BigInteger getNextOrderId() {
         nextOrderID = nextOrderID.add(BigInteger.ONE);
         return nextOrderID;
     }

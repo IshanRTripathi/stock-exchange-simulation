@@ -1,9 +1,9 @@
-package com.nasdaq.internship;
+package Models;
 
 import java.math.BigDecimal;
 import java.util.*;
 
-class OrderBook {
+public class OrderBook {
 
     /**
      * {stock:GOOGL} => {price:42.21} => [ {order2}, {order1}, ... ]
@@ -18,12 +18,12 @@ class OrderBook {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    static OrderBook buildBuyOrderBook()
+    public static OrderBook buildBuyOrderBook()
     {
         return new OrderBook(Side.BUY, Comparator.reverseOrder());
     }
 
-    static OrderBook buildSellOrderBook()
+    public static OrderBook buildSellOrderBook()
     {
         return new OrderBook(Side.SELL, BigDecimal::compareTo);
     }
@@ -37,7 +37,7 @@ class OrderBook {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void add(final Order order) {
+    public void add(final Order order) {
         if (order.getSide() != this.side)
             throw new IllegalArgumentException("Trying to add an illegal order side.");
 
@@ -67,7 +67,7 @@ class OrderBook {
                 side == Side.SELL && ourPrice.compareTo(priceOffered) <= 0;
     }
 
-    void remove(final Order order) {
+    public void remove(final Order order) {
         if (order.getSide() != this.side)
             throw new IllegalArgumentException("Trying to remove an illegal order side.");
 
