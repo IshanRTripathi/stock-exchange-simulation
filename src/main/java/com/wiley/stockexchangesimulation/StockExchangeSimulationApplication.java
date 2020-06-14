@@ -18,7 +18,6 @@ public class StockExchangeSimulationApplication {
     private static final String OUTPUT = "Trades.txt";
 
     public static void main(String[] args) {
-
         SpringApplication.run(StockExchangeSimulationApplication.class, args);
         MatchingEngine matchingEngine = new MyEngine();
         BufferedReader br = null;
