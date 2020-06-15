@@ -35,12 +35,17 @@ public class SpringWebAndDataJpaApplication {
 		obj.makeTxt();
 		Connection con = null;
 		PreparedStatement st;
+		Statement stmt;
 		//------------------------------------
 		List data = new ArrayList();
         try {
                 
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db1", "root", "root");
+                
+                stmt=con.createStatement();
+                String query="truncate table trade_table";
+                stmt.executeUpdate(query);
                
                 
 
