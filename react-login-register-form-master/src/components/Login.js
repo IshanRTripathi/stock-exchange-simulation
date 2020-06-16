@@ -8,7 +8,8 @@ class Login extends Component {
 
 		this.state = {
 			email: '',
-			password: ''
+			password: '',
+			error:''
 		};
 
 		this.update = this.update.bind(this);
@@ -55,11 +56,17 @@ class Login extends Component {
 							onChange={this.update}
 							name="password"
 						/>
+						
 					</div>
+					<span className="text-danger">{this.state.error}</span>
 
-					<button onClick={() => {new CustomerApiService().loginCustomer({email: this.state.email, password: this.state.password})}}>Login</button>
+					{/* <Link to="/Welcome">Go to home</Link> */}
+					
+					<br></br>
+					<br></br>
+					<button onClick={() => new CustomerApiService().loginCustomer({email: this.state.email, password: this.state.password})?this.props.history.push('/Welcome'):this.setState({error:"username or password is incorrect"})}>Login</button>
 				</form>
-
+				<br></br>
 				<Link to="/register">Create an account</Link>
 			</div>
 		);

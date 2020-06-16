@@ -15,9 +15,10 @@ export default class CustomerApiService{
 		console.log(customer);
 		
 		return axios.post('http://localhost:8085/logincustomer',customer)
-		  .then(function (response) {
-			console.log(response);
-		  })
+		  .then(response =>
+			  
+			response.data
+		  )
 		  .catch(function (error) {
 			console.log(error);
 		  });

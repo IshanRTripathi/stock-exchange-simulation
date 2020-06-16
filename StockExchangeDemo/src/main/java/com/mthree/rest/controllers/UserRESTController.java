@@ -3,6 +3,8 @@ package com.mthree.rest.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +19,7 @@ import com.mthree.services.UserService;
 
 @RestController
 @CrossOrigin("*")
+
 public class UserRESTController {
 
 	
@@ -30,6 +33,38 @@ public class UserRESTController {
 			userService.registerUser(u);
 			
 			return "Registration Success";
+		}
+		
+		
+		
+//		public void handleGet(HttpServletResponse response) {
+//		    response.setHeader("Location", "localhost:3000/MainPage");
+//		    response.setStatus(302);
+//		}
+		
+		
+		@PostMapping("/logincustomer")
+		public boolean signIn(@RequestBody User u) {
+			
+			
+			
+			User o =userService.getUserByEmail(u.getEmail());
+			System.out.println("Table object"+o);
+			if(o==null || o.getEmail()==null) {
+				System.out.println("false");
+				return false;
+			}
+			
+			
+			if(o.getPassword().equals(u.getPassword())) {
+				System.out.println("true");
+				return true;
+			}
+			else {
+				System.out.println("false");
+				return false;
+			}
+			
 			
 			
 		}

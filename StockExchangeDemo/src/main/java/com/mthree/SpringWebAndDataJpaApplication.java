@@ -15,6 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.mthree.engines.MatchingEngine;
 import com.mthree.engines.MyEngine;
@@ -29,6 +32,7 @@ public class SpringWebAndDataJpaApplication {
 	
 	 private static final String INPUT = "C:\\Users\\karan\\Desktop\\Ordersssss.txt";
 	 private static final String OUTPUT = "C:\\Users\\karan\\Desktop\\Trades.txt";
+	 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebAndDataJpaApplication.class, args);
 		ToTextFile obj= new ToTextFile();
@@ -47,19 +51,12 @@ public class SpringWebAndDataJpaApplication {
                 String query="truncate table trade_table";
                 stmt.executeUpdate(query);
                
-                
-
-               
-               
+            
                 
         } catch (Exception e) {
                 System.out.println(e);
         }
 		//------------------------------------
-		
-		
-		
-		
 		
 		
 		 MatchingEngine matchingEngine = new MyEngine();
@@ -102,7 +99,6 @@ public class SpringWebAndDataJpaApplication {
 	                    }
 	                    
 	                    
-	                    
 	                } catch (IllegalArgumentException e) {
 	                    System.err.println(e.toString());
 	                    System.err.println("Skipping line : " + line);
@@ -120,7 +116,7 @@ public class SpringWebAndDataJpaApplication {
 	        }
 	    }
 	
-
-	}
+	
+}
 
 

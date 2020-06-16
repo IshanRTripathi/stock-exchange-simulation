@@ -79,7 +79,7 @@ class Register extends Component {
 
 					<button onClick={() => {new CustomerApiService().addCustomer({fullname: this.state.fullname,email: this.state.email, password: this.state.password})}}>Register</button>
 				</form>
-
+				<br></br>
 				<Link to="/">Login Here</Link>
 			</div>
 		);
