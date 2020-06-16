@@ -6,7 +6,7 @@ export default class CustomerApiService{
 	
 	getCustomers = () => {
 		
-		return axios.get("http://localhost:8080/getCustomers");
+		return axios.get("http://localhost:8085/getCustomers");
 	}
 	
 	
@@ -14,7 +14,7 @@ export default class CustomerApiService{
 
 		console.log(customer);
 		
-		return axios.post('http://localhost:8080/logincustomer',customer)
+		return axios.post('http://localhost:8085/logincustomer',customer)
 		  .then(function (response) {
 			console.log(response);
 		  })
@@ -28,7 +28,7 @@ export default class CustomerApiService{
 
 		console.log(customer);
 		
-		return axios.post('http://localhost:8080/addCustomer',customer)
+		return axios.post('http://localhost:8085/addCustomer',customer)
 		  .then(function (response) {
 			console.log(response);
 		  })

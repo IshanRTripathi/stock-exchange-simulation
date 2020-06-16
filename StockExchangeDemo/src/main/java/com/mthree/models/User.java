@@ -8,34 +8,36 @@ import javax.persistence.Id;
 public class User {
 	
 	@Id
+	@GeneratedValue
 	private int userId;
-	private String firstName;
-	private String lastName;
+	private String fullname;
 	private String password;
 	private String email;
 	
-	public User(String firstName, String lastName, String password, String email) {
+	public User() {}
+
+	public User(int userId, String fullname, String password, String email) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.userId = userId;
+		this.fullname = fullname;
 		this.password = password;
 		this.email = email;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
 	public String getPassword() {
@@ -56,9 +58,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", email=" + email
+		return "User [userId=" + userId + ", fullname=" + fullname + ", password=" + password + ", email=" + email
 				+ "]";
 	}
+	
 	
 	
 	

@@ -24,6 +24,16 @@ class Register extends Component {
 			[name]: value
 		});
 	}
+	displayLogin(e) {
+		e.preventDefault();
+		console.log('You have successfully registered');
+		console.log(this.state);
+		this.setState({
+			fullname: '',
+			email: '',
+			password: ''
+		});
+	}
 
 
 
@@ -67,7 +77,7 @@ class Register extends Component {
 						<input type="password" placeholder="Confirm Password" name="password1" />
 					</div>
 
-					<button onClick={() => {new CustomerApiService().addCustomer({fullname: this.state.fullname,email: this.state.email, password: this.state.password})}}>Login</button>
+					<button onClick={() => {new CustomerApiService().addCustomer({fullname: this.state.fullname,email: this.state.email, password: this.state.password})}}>Register</button>
 				</form>
 
 				<Link to="/">Login Here</Link>
