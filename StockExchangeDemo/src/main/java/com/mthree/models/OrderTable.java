@@ -22,31 +22,30 @@ public class OrderTable {
     private BigDecimal quantity;
 	private BigDecimal price;
 	
-	@Column(name="ordertype")
-	private String ordertype;
+	private String type;
 	
 
 	public OrderTable() {}
 	
 	public OrderTable(BigInteger id, String client, String stock, BigDecimal quantity, BigDecimal price,
-			String ordertype) {
+			String type) {
 		super();
 		this.id = id;
 		this.client = client;
 		this.stock = stock;
 		this.quantity = quantity;
 		this.price = price;
-		this.ordertype = ordertype;
+		this.type = type;
 	}
 	
 	
-	public String getOrderType() {
-		return ordertype;
+	public String getType() {
+		return type;
 	}
 
 
-	public void setOrderType(String ordertype) {
-		this.ordertype = ordertype;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 
@@ -80,6 +79,12 @@ public class OrderTable {
 	}
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderTable [id=" + id + ", client=" + client + ", stock=" + stock + ", quantity=" + quantity
+				+ ", price=" + price + ", type=" + type + "]";
 	}
 	
 

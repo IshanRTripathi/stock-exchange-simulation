@@ -22,6 +22,11 @@ public class TradeTable {
     private String stock;
     private BigDecimal quantity;
     private BigDecimal price;
+    
+    
+    public TradeTable() {}
+    
+    
 	public TradeTable(String timeStamp, BigInteger id, String seller, String buyer, String stock, BigDecimal quantity,
 			BigDecimal price) {
 		super();

@@ -57,7 +57,7 @@ public class Trade {
                 id + " " +
                 toStringShort();
     }
-
+ 
     public String toStringShort() {
         return seller + " -> " +
                 buyer + " " +

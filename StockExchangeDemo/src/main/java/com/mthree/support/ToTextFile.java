@@ -29,7 +29,7 @@ public class ToTextFile {
                     while (rs.next()) {
                             double id = rs.getDouble("id");
                             String client = rs.getString("client");
-                            String orderType = rs.getString("order_type");
+                            String orderType = rs.getString("type");
                             double price=rs.getDouble("price");
                             double quantity=rs.getDouble("quantity");
                             String stock = rs.getString("stock");

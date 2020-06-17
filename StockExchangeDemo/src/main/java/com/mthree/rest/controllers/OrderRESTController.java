@@ -21,6 +21,7 @@ public class OrderRESTController {
 	public String  placeOrder(@RequestBody OrderTable o) {
 		
 		orderTableService.addOrder(o);
+		System.out.println(o);
 		
 		return "Order Placed";
 	}

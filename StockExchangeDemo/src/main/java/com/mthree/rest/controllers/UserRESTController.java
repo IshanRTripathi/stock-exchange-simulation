@@ -46,7 +46,7 @@ public class UserRESTController {
 		@PostMapping("/logincustomer")
 		public boolean signIn(@RequestBody User u) {
 			
-			
+			System.out.println("Request caught for login");
 			
 			User o =userService.getUserByEmail(u.getEmail());
 			System.out.println("Table object"+o);

@@ -4,10 +4,12 @@ import axios from 'axios';
 export default class CustomerApiService{
 	
 	
-	getCustomers = () => {
+	static getTrades = () => {
 		
-		return axios.get("http://localhost:8085/getCustomers");
+		return axios.get("http://localhost:8085/getTrades");
 	}
+
+	
 	
 	
 	loginCustomer = (customer) => {
@@ -50,6 +52,8 @@ export default class CustomerApiService{
 			console.log(error);
 		  });
 	}
+
+
 
 
 

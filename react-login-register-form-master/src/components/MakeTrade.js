@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CustomerApiService  from "../services/RestApiService";
+import StockImage from '../StockImage.jpeg';
 
 class MakeTrade extends Component {
 	constructor(props) {
@@ -9,11 +10,10 @@ class MakeTrade extends Component {
 		this.state = {
 
             client: '',
-            orderType: '',
+            type: '',
             price: '',
             quantity: '',
             stock:''
-            
             
 		};
 
@@ -35,7 +35,7 @@ class MakeTrade extends Component {
 		console.log(this.state);
 		this.setState({
             client: '',
-            orderType: '',
+            type: '',
             price: '',
             quantity: '',
             stock:''
@@ -44,11 +44,16 @@ class MakeTrade extends Component {
 
 
 
+
 	render() {
 		return (
 			<div className="maketrade">
+			<h2>Make Trade</h2>
+
+			<div className="logo"> <img src={StockImage} width="100" height="50" top="100" left="30"/> <span><p> Current Price - 100$</p></span></ div>
+
 				<form onSubmit={this.displayLogin}>
-					<h2>Make Trade</h2>
+					
 
 					<div className="client">
 						<input
@@ -60,12 +65,13 @@ class MakeTrade extends Component {
 						/>
 					</div>
 
-					<div className="ordertype">
+
+					<div className="type">
 						<input
 							type="text"
-							placeholder="ordertype"
-							name="ordertype"
-							value={this.state.ordertype}
+							placeholder="type"
+							name="type"
+							value={this.state.type}
 							onChange={this.update}
 						/>
 					</div>
@@ -96,20 +102,26 @@ class MakeTrade extends Component {
 							value={this.state.stock}
 							onChange={this.update}
 						/>
-					</div>
+					</div> 
+
+					
+					
+					
 
 					
 
 					<button onClick={() => {new CustomerApiService().addOrder(
                             {client: this.state.client,
-                            ordertype: this.state.ordertype, 
+							type: this.state.type, 
                             price: this.state.price,
                             quantity:this.state.quantity,
                             stock:this.state.stock})}
                             }>Place Order</button>
 				</form>
-				<br></br>
-				{/* <Link to="/">Login Here</Link> */}
+
+				
+				
+				<Link to="/TradeStatus">Check trade status</Link>
 			</div>
 		);
 	}
