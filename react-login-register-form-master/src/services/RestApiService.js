@@ -37,6 +37,22 @@ export default class CustomerApiService{
 			console.log(error);
 		  });
 	}
+
+	addOrder = (order) => {
+
+		console.log(order);
+		
+		return axios.post('http://localhost:8085/addOrder',order)
+		  .then(function (response) {
+			console.log(response);
+		  })
+		  .catch(function (error) {
+			console.log(error);
+		  });
+	}
+
+
+
 	
 	
 	

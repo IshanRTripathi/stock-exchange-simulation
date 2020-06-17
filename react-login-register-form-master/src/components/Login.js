@@ -64,7 +64,7 @@ class Login extends Component {
 					
 					<br></br>
 					<br></br>
-					<button onClick={() => new CustomerApiService().loginCustomer({email: this.state.email, password: this.state.password})?this.props.history.push('/Welcome'):this.setState({error:"username or password is incorrect"})}>Login</button>
+					<button onClick={() => new CustomerApiService().loginCustomer({email: this.state.email, password: this.state.password})?this.props.history.push('/MakeTrade'):this.setState({error:"username or password is incorrect"})}>Login</button>
 				</form>
 				<br></br>
 				<Link to="/register">Create an account</Link>

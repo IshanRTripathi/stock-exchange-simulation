@@ -3,6 +3,7 @@ package com.mthree.models;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,28 +21,32 @@ public class OrderTable {
     private String stock;
     private BigDecimal quantity;
 	private BigDecimal price;
-	private String orderType;
+	
+	@Column(name="ordertype")
+	private String ordertype;
 	
 
+	public OrderTable() {}
+	
 	public OrderTable(BigInteger id, String client, String stock, BigDecimal quantity, BigDecimal price,
-			String orderType) {
+			String ordertype) {
 		super();
 		this.id = id;
 		this.client = client;
 		this.stock = stock;
 		this.quantity = quantity;
 		this.price = price;
-		this.orderType = orderType;
+		this.ordertype = ordertype;
 	}
 	
 	
 	public String getOrderType() {
-		return orderType;
+		return ordertype;
 	}
 
 
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
+	public void setOrderType(String ordertype) {
+		this.ordertype = ordertype;
 	}
 
 
