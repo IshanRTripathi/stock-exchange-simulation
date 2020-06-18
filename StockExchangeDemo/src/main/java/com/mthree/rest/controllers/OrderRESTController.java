@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mthree.SpringWebAndDataJpaApplication;
 import com.mthree.models.OrderTable;
 import com.mthree.services.OrderTableService;
 
@@ -21,7 +22,8 @@ public class OrderRESTController {
 	public String  placeOrder(@RequestBody OrderTable o) {
 		
 		orderTableService.addOrder(o);
-		System.out.println(o);
+		SpringWebAndDataJpaApplication obj=new SpringWebAndDataJpaApplication();
+		obj.runTask();
 		
 		return "Order Placed";
 	}

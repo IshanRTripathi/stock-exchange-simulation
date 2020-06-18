@@ -35,6 +35,15 @@ public class SpringWebAndDataJpaApplication {
 	 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebAndDataJpaApplication.class, args);
+		
+		SpringWebAndDataJpaApplication s=new SpringWebAndDataJpaApplication();
+		s.runTask();
+		
+	    }
+	
+	
+	public void runTask() {
+		
 		ToTextFile obj= new ToTextFile();
 		obj.makeTxt();
 		Connection con = null;
@@ -89,6 +98,8 @@ public class SpringWebAndDataJpaApplication {
 								st.setString(6,trade.getStock());
 								st.setString(7, trade.getTimeStamp());
 								
+								
+								
 								st.executeUpdate();
 							} catch (SQLException e) {
 								// TODO Auto-generated catch block
@@ -114,7 +125,9 @@ public class SpringWebAndDataJpaApplication {
 	            } catch (IOException e) {
 	            }
 	        }
-	    }
+		
+		
+	}
 	
 	
 }

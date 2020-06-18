@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CustomerApiService  from "../services/RestApiService";
 import StockImage from '../StockImage.jpeg';
+import Microsoft from './Microsoft.jpeg';
+import Amazon from './Amazon.jpeg';
+import Netflix from './Netflix.jpeg'
+
 
 class MakeTrade extends Component {
 	constructor(props) {
@@ -46,11 +50,40 @@ class MakeTrade extends Component {
 
 
 	render() {
-		return (
-			<div className="maketrade">
-			<h2>Make Trade</h2>
+		return (<>
+		<h2>Make Trade</h2>
+			 <div className="container">
+			
+				<div className="row">
+					<div className="col-lg-6">
+					<div className="row">
+					<div className="col-md-6 ">
+						
+						<img src={StockImage} className="mb-2 " width="200" height="100"/>
+						<br/>
+						<br/>
+						<br/>
+						
+						<img src={Microsoft} className="mb-2" width="200" height="100"/>
+						<br/>
+						<br/>
+						<br/>
+						
+						<img src={Amazon} className="mb-2" width="200" height="175"/>
+						<br/>
+						<br/>
+						<br/>
+						<img src={Netflix} className="mb-2" width="200" height="100"/>
+						<br/>
+						<br/>
+						<br/>
 
-			<div className="logo"> <img src={StockImage} width="100" height="50" top="100" left="30"/> <span><p> Current Price - 100$</p></span></ div>
+					</div>
+						<div className="col-md-6"></div>
+					</div>
+					</div>
+					<div className="col-lg-6">
+				
 
 				<form onSubmit={this.displayLogin}>
 					
@@ -103,13 +136,6 @@ class MakeTrade extends Component {
 							onChange={this.update}
 						/>
 					</div> 
-
-					
-					
-					
-
-					
-
 					<button onClick={() => {new CustomerApiService().addOrder(
                             {client: this.state.client,
 							type: this.state.type, 
@@ -118,11 +144,13 @@ class MakeTrade extends Component {
                             stock:this.state.stock})}
                             }>Place Order</button>
 				</form>
-
-				
-				
+				<br/>
 				<Link to="/TradeStatus">Check trade status</Link>
+					</div>
+				</div>
+				
 			</div>
+			</>
 		);
 	}
 }

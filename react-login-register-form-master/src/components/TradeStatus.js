@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import CustomerApiService  from "../services/RestApiService";
+
+
+
 class TradeStatus extends Component{
 
 	
@@ -22,6 +25,7 @@ class TradeStatus extends Component{
 	componentDidMount(){
 		
 		this.getAllTrades();
+		
 	}
 	
 	
@@ -30,22 +34,36 @@ class TradeStatus extends Component{
 		CustomerApiService.getTrades()
 							.then( res => {
 								
+								
 								this.setState({trades: res.data})
+								
+
 								
 							}
 		
 			)	
 		}
 	
+
+
 	
 	render(){
 		
 		return (
 		
+			
+		<div classname="content-page" >
+{/* 
+style={{backgroundImage:"url('https://www.fnordware.com/superpng/pnggrad16rgb.png')", 
+		backgroundPosition: 'center',backgroundSize: 'cover',backgroundRepeat: 'no-repeat',height:"500px",width:"100%"}} */}
+
+			
+			<h1>Confirmed Trades</h1>
 		
-		<div>
+
+			
 		
-			<table border="1">
+			<table border ="1">
 			
 			
 			  <thead>
@@ -56,7 +74,7 @@ class TradeStatus extends Component{
                 <th> Quantity</th>
                 <th> Seller </th>
                 <th> Stock </th>
-                <th> Timestamp </th>
+                {/* <th> Timestamp </th> */}
 			  
 			  </thead>
 			  
@@ -76,7 +94,7 @@ class TradeStatus extends Component{
                             <td> {trade.quantity} </td>
                             <td> {trade.seller} </td>
                             <td> {trade.stock} </td>
-                            <td> {trade.time_stamp} </td>
+                            {/* <td> {trade.timestamp} </td> */}
 						
 						</tr>
 					
