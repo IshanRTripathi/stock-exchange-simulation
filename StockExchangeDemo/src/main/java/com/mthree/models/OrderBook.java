@@ -16,8 +16,6 @@ public class OrderBook {
 
     private final Comparator<Order> orderComparator = Comparator.comparing(Order::getTimeStamp).thenComparing(Order::getId);
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public static OrderBook buildBuyOrderBook()
     {
         return new OrderBook(Side.BUY, Comparator.reverseOrder());
@@ -28,16 +26,12 @@ public class OrderBook {
         return new OrderBook(Side.SELL, BigDecimal::compareTo);
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     private OrderBook(final Side side, final Comparator<BigDecimal> priceComparator) {
         this.side = side;
         this.priceComparator = priceComparator;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public void add(final Order order) {
+    public void addOrder(final Order order) {
         if (order.getSide() != this.side)
             throw new IllegalArgumentException("Trying to add an illegal order side.");
 
@@ -46,7 +40,7 @@ public class OrderBook {
         orderBook.get(order.getStock()).get(order.getPrice()).add(order);
     }
 
-    public Order match(final Order order) {
+    public Order matchOrder(final Order order) {
         if (order.getSide() != this.side.getOppositeSide())
             throw new IllegalArgumentException("Trying to match an illegal order side.");
 
@@ -67,7 +61,7 @@ public class OrderBook {
                 side == Side.SELL && ourPrice.compareTo(priceOffered) <= 0;
     }
 
-    public void remove(final Order order) {
+    public void removeOrder(final Order order) {
         if (order.getSide() != this.side)
             throw new IllegalArgumentException("Trying to remove an illegal order side.");
 

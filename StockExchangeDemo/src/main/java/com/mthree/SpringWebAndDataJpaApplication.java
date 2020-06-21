@@ -30,8 +30,8 @@ public class SpringWebAndDataJpaApplication {
 	
 	
 	
-	 private static final String INPUT = "C:\\Users\\karan\\Desktop\\Ordersssss.txt";
-	 private static final String OUTPUT = "C:\\Users\\karan\\Desktop\\Trades.txt";
+	 private static final String INPUT = "C:\\Users\\itripathi\\Desktop\\Ordersssss.txt";
+	 private static final String OUTPUT = "C:\\Users\\itripathi\\Desktop\\Trades.txt";
 	 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebAndDataJpaApplication.class, args);

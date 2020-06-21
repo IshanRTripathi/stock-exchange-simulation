@@ -12,18 +12,14 @@ public class MyEngine implements MatchingEngine {
 
     private final OrderBook sellOrderBook = OrderBook.buildSellOrderBook();
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     @Override
     public List<Trade> enterOrder(final Order newOrder) {
         List<Trade> trades = new ArrayList<>();
-        tradeMatching(newOrder, trades);
+        tradeMatcher(newOrder, trades);
         return trades;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private void tradeMatching(final Order newOrder, final List<Trade> trades) {
+    private void tradeMatcher(final Order newOrder, final List<Trade> trades) {
         Order matchingOrder = getOppositeOrderBook(newOrder).match(newOrder);
         if (matchingOrder != null) {
             Trade trade = trade(newOrder, matchingOrder);
@@ -37,7 +33,7 @@ public class MyEngine implements MatchingEngine {
 
             if (!isFilled(newOrder, trade)) {
                 newOrder.decrease(trade.getQuantity());
-                tradeMatching(newOrder, trades);
+                tradeMatcher(newOrder, trades);
             }
 
         } else {
